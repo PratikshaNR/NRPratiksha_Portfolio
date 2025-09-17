@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N R Pratiksha</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgZmlsbD0iIzRmZDFkOSIgcj0iMzAiLz48cGF0aCBkPSJtMjAuNCAxNy4xaDYuMnYxNy44YzAgMiAuMiAzLjQuNyA0LjQuNyAxLjYgMi4zIDIuNCA0LjggMi40IDIuNCAwIDQtLjggNC44LTIuNC41LS45LjctMi40LjctNC40di0xNy44aDYuMnYxNy45YzAgMy4xLS41IDUuNS0xLjQgNy4yLTEuOCAzLjEtNS4yIDQuNy0xMC4yIDQuN3MtOC40LTEuNi0xMC4yLTQuN2MtMS0xLjctMS40LTQuMS0xLjQtNy4yeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+        type="image/png"> <!-- Replace with your logo path -->
+
+    <style>
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        /* Text typing animation */
+        .typing {
+            border-right: 2px solid yellow;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2s steps(10, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+    <!-- Header with Navigation Tabs -->
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-purple-500">N R Pratiksha</h1>
+            <!-- Hamburger Icon for Mobile View -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#about" class="text-gray-300 hover:text-purple-500 transition">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-purple-500 transition">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-purple-500 transition">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-purple-500 transition">Projects</a>
+                <a href="#blogs" class="text-gray-300 hover:text-purple-500 transition">Blogs</a>
+                <a href="#contact" class="text-gray-300 hover:text-purple-500 transition">Contact</a>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-gray-800 text-gray-300 hidden">
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-700 transition">About</a>
+            <a href="#skills" class="block px-4 py-2 hover:bg-gray-700 transition">Skills</a>
+            <a href="#experience" class="block px-4 py-2 hover:bg-gray-700 transition">Experience</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 transition">Projects</a>
+            <a href="#blogs" class="block px-4 py-2 hover:bg-gray-700 transition">Blogs</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 transition">Contact</a>
+        </div>
+    </header>
+
+    <div class="flex flex-col md:flex-row">
+        <!-- Sidebar with Contact Info -->
+        <!-- Sidebar with Contact Info -->
+        <aside class="w-full md:w-64 bg-gray-800 min-h-screen p-6">
+            <div class="text-center mb-8">
+                <img src="assets/imgs/pratiksha.jpg"
+                    alt="Profile Picture" class="rounded-full mx-auto mb-4 w-32 h-32">
+                <h2 class="text-xl font-semibold">I'm a <span id="role" class="text-purple-500"></span></h2>
+            </div>
+            <div class="flex justify-center space-x-4 text-purple-500 mb-4">
+                <p class="flex items-center">
+                    <a href="mailto:nrpratikshanayak@gmail.com" class="flex items-center hover:text-white">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </p>
+                <p class="flex items-center">
+                    <a href="tel:+916366724223" class="flex items-center hover:text-white">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/PratikshaNR" class="flex items-center hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/n-r-pratiksha22/"
+                        class="flex items-center hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="" class="flex items-center hover:text-white">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </p>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 md:p-8">
+            <!-- About Section -->
+            <section id="about" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">About Me</h2>
+                <p class="text-gray-300">
+                    Entry-Level Software Engineer and Data Enthusiast with 3 months of internship experience in Data Science and Machine Learning. 
+                    Proficient in SQL, Python, and ETL processes to extract, transform, and load data into structured systems for analysis. 
+                    Skilled in developing automation workflows, creating interactive dashboards, and applying EDA techniques to uncover actionable insights.
+                    Adept at leveraging Python, ML models, and visualization tools to enhance processes, drive efficiency, and enable data-driven decision-making.
+                </p>
+
+                <div class="mt-6 flex space-x-4">
+                    <a href="mailto:nrpratikshanayak@gmail.com"
+                        class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded transition duration-300">
+                        Hire Me
+                    </a>
+                    <a href="https://drive.google.com/file/d/1ainUBReGm6JC0dN9PMAlmoQo4egtrQ5t/view?usp=sharing"
+                        target="_blank"
+                        class="inline-block px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded transition duration-300">
+                        Resume
+                    </a>
+                </div>
+            </section>
+
+            <!-- Profile Summary Section -->
+            <section id="profile" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Profile Summary</h2>
+                <ul class="list-disc ml-6 text-gray-300">
+                    <li><b>Entry-Level Software Engineer & Data Enthusiast:</b> 3 months of internship experience in Data Science and Machine Learning, focusing on data analysis, automation, and visualization to deliver actionable insights.</li><br>
+                    <li><b>Technical Expertise:</b> Proficient in Python, Java, SQL, and ETL processes, with strong skills in data cleaning, preprocessing, and exploratory data analysis (EDA) for efficient structuring and querying.</li><br>
+                    <li><b>Automation & Development:</b> Hands-on experience in developing Python-based automation workflows and building applications using Flask, Django, and front-end technologies (HTML, CSS, JavaScript) to improve efficiency and scalability.</li><br>
+                    <li><b>Visualization Proficiency:</b> Skilled in Power BI, Seaborn, and Matplotlib for creating interactive dashboards, monitoring KPIs, and uncovering trends to support business decision-making.</li><br>
+                    <li><b>Machine Learning Foundations:</b> Knowledgeable in implementing supervised and unsupervised learning models using Scikit-Learn, with experience in EDA, feature engineering, and predictive analytics.</li><br>
+                    <li><b>Additional Skills:</b> Strong foundation in Data Structures, Algorithms, OOP, Git/GitHub, and cloud platforms (AWS, PySpark), with excellent problem-solving, analytical thinking, and collaboration skills.</li><br>
+                </ul>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Technical Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-python text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Python</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-database text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">SQL</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-coffee text-4xl text-red-500 mb-2"></i>
+                        <span class="text-gray-300">Java</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300">C</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-table text-4xl text-green-400 mb-2"></i>
+                        <span class="text-gray-300">Pandas</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-palette text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Seaborn</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-server text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Data Processing</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-broom text-4xl text-pink-400 mb-2"></i>
+                        <span class="text-gray-300">Data Cleaning</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-yellow-400 mb-2"></i>
+                        <span class="text-gray-300">ETL & EDA</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-database text-4xl text-yellow-400 mb-2"></i>
+                        <span class="text-gray-300">MySQL</span>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Data Visualization</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-microsoft text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Power BI</span>
+                    </div>
+                    
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-robot text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Machine Learning</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-cogs text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Scikit-Learn</span>
+                    </div>
+                    
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code-branch text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Git</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-github text-4xl text-yellow mb-2"></i>
+                        <span class="text-gray-300">GitHub</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-signal text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Statistics</span>
+                    </div> 
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-layer-group text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">PySpark</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">Web Scraping</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-cloud text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300">AWS</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-chart-line text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300 text-center">Business Intelligence<br>Dashboard | Reporting | KPI</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                        <span class="text-gray-300">HTML</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">CSS</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
+                        <span class="text-gray-300">JavaScript</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-flask text-4xl text-blue-400 mb-2"></i>
+                        <span class="text-gray-300">Flask</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-leaf text-4xl text-green-500 mb-2"></i>
+                        <span class="text-gray-300">Django</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-book text-4xl text-orange-400 mb-2"></i>
+                        <span class="text-gray-300">Jupyter Notebook</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-code text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-gray-300">VS Code</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-cogs text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-gray-300">OOP</span>
+                    </div>
+                    <div 
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-project-diagram text-4xl text-purple-400 mb-2"></i>
+                        <span class="text-gray-300">DSA</span>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                        <i class="fas fa-users text-4xl text-purple-400 mb-2"></i>
+                        <span class="text-gray-300 text-center">Soft Skills<br>Problem-Solving, Analytical Thinking, Collaboration</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Experience Section -->
+            <section id="experience" class="mb-10 fade-in">
+                <!-- Internship Section -->
+    
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Internships</h2>
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Data  Science & Machine Learning Intern</h3>
+                    <p class="text-gray-400">Analogica Software Dev Pvt Ltd </p>
+                    <p class="text-gray-400">06/2025 – 09/2025</p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Performed data preprocessing and cleaning on client datasets, ensuring high-quality and consistent data for model training.</li>
+                        <li>Conducted exploratory data analysis (EDA) to uncover trends, patterns, and actionable insights supporting business decisions.</li>
+                        <li>Assisted in feature engineering to enhance machine learning model accuracy and performance.</li>
+                        <li>Developed Python scripts and workflows to automate repetitive tasks, improving team efficiency and reducing manual effort.</li>
+                        <li>Created interactive dashboards and visualizations using Power BI, Matplotlib, and Seaborn to track KPIs and present insights.</li>
+                        <li>Participated in team meetings and documented processes, code, and methodologies to support knowledge sharing and project continuity.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1Ezk3MuKaRGdLPZZK4j-RHb4rkM5ONi3v/view?usp=drive_link" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                </div>
+
+            </section>
+
+            <!-- Certifications -->
+            <section id="certifications" class="mb-10 fade-in">
+
+                <!-- Professional Experience Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Certificates</h2>
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Data Science with Python – Certisured.</li>
+                        <li>IBM Python Project for Data Science – Coursera.</li>
+                        <li>Database Fundamentals: Database Concepts – Infosys Springboard.</li>
+                        <li>Fundamentals of AI & ML – Infosys Springboard.</li>
+                        <li>Tata Group Data Visualization.</li>
+                        <li>Swayam Soft Skills – NPTEL.</li>
+                    </ul>
+                </div>
+            </section>
+
+             <!-- Projects Section -->
+            <section id="projects" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Projects</h2>
+                
+                <!-- Project 1 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Credit Card Fraud Detection System.</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Credit Card Fraud Detection System – A machine learning project that detects fraudulent credit card transactions using Logistic Regression. Includes data preprocessing, feature engineering, model training with 97.6% accuracy, and a web application for real-time predictions.
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools & Technologies: Python, Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Flask.</li>
+                        <li>Performed data preprocessing and feature engineering to improve model accuracy.</li>
+                        <li>Trained Logistic Regression model achieving 97.6% accuracy in detecting fraudulent transactions.</li>
+                        <li>Implemented a web application using Flask for real-time transaction fraud predictions.</li>
+                        <li>Visualized transaction patterns and model performance using Matplotlib and Seaborn.</li>
+                        <li>Documented code, workflows, and methodologies for reproducibility and learning.</li>
+                    
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/PratikshaNR/CRDIT-CARD" target="_blank">Credit Card Fraud Detection System</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Customer Churn Prediction System.</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Developed a machine learning model to predict customer churn, helping businesses identify potential churners and take proactive measures to improve retention. The project includes data preprocessing, feature engineering, model training, and visualization of key churn patterns.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools & Technologies: Python, Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn, Flask.</li>
+                        <li>Performed data cleaning, preprocessing, and feature selection to enhance model performance.</li>
+                        <li>Trained classification models such as Logistic Regression, Random Forest, and Gradient Boosting to predict churn with high accuracy.</li>
+                        <li>Visualized customer behavior patterns and churn insights using Matplotlib and Seaborn.</li>
+                        <li>Built a Flask-based web application to allow real-time prediction of customer churn for business use.</li>
+                        <li>Documented the workflow and code for reproducibility and ease of understanding.</li>
+   
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/PratikshaNR/Churn-Prediction" target="_blank">Customer Churn Prediction System</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Happiness Prediction Web Application.</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        Developed a web application that predicts the happiness score of individuals based on socio-economic and personal factors. The app performs data preprocessing, model training, and provides real-time predictions through an interactive interface.
+
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools & Technologies: Python, Pandas, NumPy, Scikit-Learn, Flask, HTML, CSS, JavaScript.</li>
+                        <li>Performed data cleaning, preprocessing, and feature engineering to enhance model accuracy.</li>
+                        <li>Trained regression and classification models to predict happiness scores based on multiple factors.</li>
+                        <li>Developed a Flask-based web interface for real-time prediction and visualization of happiness scores.</li>
+                        <li>Visualized data patterns and model outputs using Matplotlib and Seaborn for better user insights.</li>
+                        <li>Documented project workflow, code, and methodology for reproducibility and learning.</li>
+                    </ul>
+                    <p><b>Live App:</b> <a href="https://happiness-prediction-taxn.onrender.com/" target="_blank">https://happiness-prediction-taxn.onrender.com/</a></p>
+
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/PratikshaNR/Happiness-Prediction" target="_blank">Happiness Prediction Web Application</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+
+                <!-- Project 4-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Crypto Price Tracker & Analyzer (Bitcoin).</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        A Python and Flask-based web application that tracks Bitcoin (BTC) prices in multiple currencies (USD, INR, EUR, JPY) using the CoinGecko API. It stores data in SQLite, sends alerts if prices cross defined thresholds, and displays price trends using Matplotlib charts.
+                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools Used: Python, Flask, SQLite, CoinGecko API, Matplotlib</li>
+                        <li>Implemented real-time BTC price fetching and storage in SQLite.</li>
+                        <li>Developed custom price alerts to notify users of significant price changes.</li>
+                        <li>Created visualizations of price trends using Matplotlib.</li>
+                        <li>Built a user-friendly web dashboard with Flask.</li>
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/PratikshaNR/crypto_tracker" target="_blank">Crypto Price Tracker & Analyzer (Bitcoin).</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+
+                <!-- Project 5-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">Frontend Projects</h3>
+                    <p class="text-gray-400 list-disc ml-5 mt-2">
+                        This collection includes three React-based frontend projects: Image Slider, To-Do List Application, and React Calculator. 
+                        These projects demonstrate interactive UI, state management, component reusability, and responsive design.                    </p>
+                    <ul class="text-gray-400 list-disc ml-5 mt-2">
+                        <li>Tools & Technologies Used: React.js, HTML, CSS, JavaScript, VS Code, Node.js, npm, Git, GitHub</li>
+
+                        <li><b>Image Slider:</b> Responsive carousel with smooth transitions, navigation controls, and dynamic image rendering using React state and props.</li>
+                        <li><b>To-Do List Application:</b> Task management app allowing users to add, edit, delete, and persist tasks using React state and localStorage for frontend persistence.</li>
+                        <li><b>React Calculator:</b> Fully functional calculator performing arithmetic operations using React state, event handling, and dynamic component updates.</li>
+                    </ul>
+                    <p><b>GitHub Repo:</b> <a href="https://github.com/PratikshaNR/OPTIFY" target="_blank">Frontend Projects</a></p>
+                    <p class="text-gray-400 list-disc ml-5 mt-2"></p> <!--Data Here-->
+                </div>
+
+            
+                <!-- blogs -->
+            <section id="blogs" class="mb-10 fade-in">
+                <!-- Blogs Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Blogs</h2>
+
+                <!-- Blogs 1-->
+                <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                    <h3 class="text-xl font-semibold text-white">
+                        AI : A Helpful partner in Every Part of Life
+                    </h3>
+                    <p class="text-gray-400">AI acts as a smart partner, helping humans make better decisions and perform tasks more efficiently in various fields like healthcare, education, and agriculture.</p>
+                    <a href="https://www.linkedin.com/posts/n-r-pratiksha22_ai-a-helpful-partner-in-every-part-of-life-activity-7373631158103961600-uqB1?utm_source=share&utm_medium=member_desktop&rcm=ACoAADK52DYBYQzIy9suNum7xUSdQO7GPj8XvBY" target="_blank"
+                        class="text-purple-400 hover:underline">Click here</a>
+                </div>
+              
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-500 mb-4">Contact Me</h2>
+                <form id="contact-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <textarea name="message" rows="5" placeholder="Your Message"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required></textarea>
+                    <button type="submit"
+                        class="w-full bg-purple-500 text-black p-2 rounded hover:bg-purple-400 transition">Send
+                        Message</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 text-center">
+        <p class="text-gray-400">&copy; 2025 N R Pratiksha. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <script>
+    // EmailJS Initialization
+    (function () {
+        emailjs.init("dWc66KUEYSTsU13Lf"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        emailjs.sendForm('service_o9eidib', 'template_pvkaoum', this)
+            .then(function () {
+                alert("Message sent successfully!");
+            }, function (error) {
+                alert("Failed to send the message. Please try again.");
+                console.log('EmailJS error:', error);
+            });
+    });
+
+    // Typing animation for role
+    const roles = ["SoftwareEngineer Backend Python Java", "FullStackDeveloper Python Java SQL", "AI ML Enthusiast"];
+    let currentRoleIndex = 0;
+    let currentCharIndex = 0;
+    const roleElement = document.getElementById("role");
+
+    function typeRole() {
+        const currentRole = roles[currentRoleIndex];
+        if (currentCharIndex < currentRole.length) {
+            roleElement.textContent += currentRole.charAt(currentCharIndex);
+            currentCharIndex++;
+            setTimeout(typeRole, 100);
+        } else {
+            setTimeout(deleteRole, 1500);
+        }
+    }
+
+    function deleteRole() {
+        if (currentCharIndex > 0) {
+            roleElement.textContent = roleElement.textContent.slice(0, -1);
+            currentCharIndex--;
+            setTimeout(deleteRole, 50);
+        } else {
+            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+            setTimeout(typeRole, 500);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeRole);
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden'); // close mobile menu on click
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

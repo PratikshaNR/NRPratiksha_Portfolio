@@ -1,29 +1,35 @@
-Portfolio
+# 🌟 Portfolio
 
-Welcome to my personal portfolio! This website showcases my skills, projects, and experiences as a developer.
+Welcome to my personal portfolio! Explore my skills, projects, and experience as a developer.
 
-🚀 Demo
+## 🚀 Live Demo
 
-You can view the live version of my portfolio here:
+Check out my portfolio live:  
+[👉 pratikshanr.github.io/Portfolio](https://pratikshanr.github.io/Portfolio/)
 
-👉 https://pratikshanr.github.io/Portfolio/
+## 🛠️ Technologies
 
-🛠️ Technologies Used
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
-HTML5
+## 📁 Project Structure
 
-CSS3
+```
+Portfolio/
+├── index.html        # Main page
+├── assets/           # Images & media
+├── css/              # Stylesheets
+└── js/               # JavaScript files
+```
 
-JavaScript
+## 💡 About
 
-📂 Project Structure
-/Portfolio
-├── index.html       # Main landing page
-├── /assets          # Images, fonts, and other media
-├── /css             # Stylesheets
-└── /js              # JavaScript files
+This portfolio is a quick introduction to me and my work.  
+It's responsive, user-friendly, and highlights the projects I've built.
 
-💡 About This Project
+## 📬 Contact
 
-This portfolio serves as a personal introduction, highlighting my journey and showcasing the projects I've worked on. It's designed to be responsive and user-friendly, providing a seamless experience across devices.
+- **LinkedIn:** [Connect with me](https://www.linkedin.com/in/n-r-pratiksha22)
 
+Thanks for visiting!
